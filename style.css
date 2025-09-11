@@ -15,6 +15,7 @@
 14. STYLES FOR "WHAT'S INSIDE" SECTION
 15. MOVED INLINE STYLES
 16. NEW HOME PAGE HERO STYLES
+17. NEW STYLES FOR "HOW IT WORKS" SECTION
 --------------------------- */
 
 /* 1. BRAND GUIDE & GLOBAL STYLES */
@@ -158,10 +159,10 @@ section { padding: 5rem 0; overflow-x: clip; }
 .bridge-cta { font-family: var(--font-heading); font-size: 1.2rem; margin-top: 2rem; }
 
 /* 5. CONTENT SECTIONS */
-.gap-problem, .experience-outcomes, .differentiators, .confidence-section, .whats-inside {
+.gap-problem, .experience-outcomes, .differentiators, .confidence-section, .whats-inside, .how-it-works {
     padding: 5rem 0;
 }
-.experience-outcomes, .differentiators { background-color: #fdf8fa; }
+.experience-outcomes, .differentiators, .how-it-works { background-color: #fdf8fa; }
 .whats-inside, .confidence-section { background-color: #fff; }
 .confidence-section {
     padding-top: 4rem;
@@ -389,6 +390,9 @@ footer {
     }
     .benefits-grid {
         grid-template-columns: 1fr; /* This ensures the benefits cards stack on tablets and below */
+    }
+    .how-it-works-grid {
+        grid-template-columns: 1fr;
     }
 }
 @media (max-width: 768px) {
@@ -653,5 +657,58 @@ footer {
         min-height: 70vh;
         padding-top: 4rem;
         padding-bottom: 4rem;
+    }
+}
+
+/* 17. NEW STYLES FOR "HOW IT WORKS" SECTION */
+.how-it-works {
+    background-color: #fdf8fa;
+    text-align: center;
+}
+.how-it-works-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+}
+.how-it-works-card {
+    background-color: #fff;
+    padding: 3rem 2rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow-subtle);
+    transition: all 0.3s ease;
+    border-bottom: 4px solid transparent;
+}
+.how-it-works-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-strong);
+    border-bottom-color: var(--accent-color);
+}
+.card-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem auto;
+}
+.card-icon img {
+    width: 100%;
+    height: auto;
+}
+.how-it-works-card h3 {
+    text-transform: uppercase;
+    color: var(--primary-color);
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+}
+.how-it-works-card p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--dark-text);
+}
+@media (max-width: 992px) {
+    .how-it-works-grid {
+        grid-template-columns: 1fr;
     }
 }
