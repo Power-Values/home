@@ -568,48 +568,25 @@ footer {
     align-items: center;
     min-height: 60vh;
     padding: 6rem 0;
-    position: relative; /* Crucial for positioning the video and overlay */
-    overflow: hidden; /* Ensures video stays within the section */
-}
-
-.hero-video {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: -1;
-    transform: translateX(-50%) translateY(-50%);
-    object-fit: cover; /* Ensures video fills the container without distortion */
-}
-
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent black overlay */
-    z-index: 0;
+    position: relative;
+    overflow: hidden;
+    background-color: var(--background-light); /* Changed background color to white */
 }
 
 .hero-content {
     position: relative;
-    z-index: 1; /* Ensures content is on top of the overlay */
+    z-index: 1;
     max-width: 800px;
     text-align: center;
-    color: #fff; /* White text for readability */
+    color: var(--dark-text); /* Changed text color for readability on white background */
 }
 
 .hero-content h1 {
     font-size: clamp(2.5rem, 6vw, 4rem);
-    color: #fff;
-    background: none;
-    -webkit-background-clip: initial;
-    -webkit-text-fill-color: initial;
-    background-clip: initial;
+    background: linear-gradient(45deg, var(--primary-color) 30%, var(--muted-purple) 70%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .hero-content p {
