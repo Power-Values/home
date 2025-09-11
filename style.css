@@ -419,70 +419,113 @@ footer {
 @media (min-width: 769px) { .mobile-sticky-cta { display: none; } }
 
 /* 12. STYLES FOR REDESIGNED GAP/PROBLEM SECTION */
-.gap-problem .section-header {
-    text-align: left;
-    margin: 0 0 2rem 0;
-}
 .gap-problem-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    align-items: center;
+    grid-template-columns: 1fr 1.5fr; /* Image on left (smaller), text on right (larger) */
+    gap: 4rem; /* Increased gap for better separation */
+    align-items: center; /* Vertically align items in the middle */
+    padding: 3rem 0; /* Add padding within the grid */
 }
-.gap-problem-hook {
-    align-self: stretch;
-    display: flex;
-}
-.hook-card {
-    background-color: #fff;
-    padding: 2.5rem;
-    border-radius: 12px;
-    box-shadow: var(--shadow-strong);
-    border-left: 5px solid var(--secondary-accent);
+
+.gap-problem-image {
+    text-align: center;
     position: relative;
-    font-size: 1.1rem;
+}
+
+.section-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px; /* Slightly more rounded corners */
+    box-shadow: 0 15px 40px rgba(94, 37, 58, 0.2); /* More prominent shadow */
+    transition: transform 0.3s ease-in-out;
+}
+
+.section-image:hover {
+    transform: translateY(-8px) scale(1.02); /* Subtle lift and scale on hover */
+}
+
+.gap-problem-content {
+    text-align: left; /* Align text to the left */
+    max-width: 650px; /* Constrain text width for readability */
+    margin: 0; /* Remove auto margin */
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; /* Space between text blocks */
+}
+
+.gap-problem-content h2 {
+    font-size: clamp(2rem, 3.5vw, 3rem); /* Slightly larger and more responsive */
+    margin-bottom: 1.5rem; /* Space below the main heading */
+    text-align: left; /* Ensure heading is left-aligned */
+}
+
+.gap-problem-content p {
+    font-size: clamp(1rem, 1.1vw, 1.15rem);
     line-height: 1.7;
+    margin-bottom: 0.5rem;
+}
+
+.text-block {
+    padding: 1rem 0;
+}
+
+.text-block.highlight {
+    background-color: #fdf2e9; /* Light, warm background for a highlight block */
+    padding: 1.5rem 2rem;
+    border-radius: 10px;
+    border-left: 5px solid var(--accent-color); /* Stronger accent border */
+    box-shadow: 0 5px 20px rgba(255, 225, 77, 0.1); /* Subtle glow effect */
+}
+
+.text-block.highlight h3 {
+    font-size: clamp(1.3rem, 1.8vw, 1.6rem);
     color: var(--primary-color);
-    width: 100%;
-    margin: auto;
+    margin-bottom: 0.75rem;
+    position: relative;
+    padding-left: 1rem;
 }
-.hook-card::before {
-    content: '“';
+
+.text-block.highlight h3::before {
+    content: '✨'; /* Add a subtle icon */
     position: absolute;
-    top: 0.5rem;
-    left: 1.5rem;
-    font-size: 6rem;
-    font-family: serif;
-    color: var(--secondary-accent);
-    opacity: 0.1;
-    line-height: 1;
+    left: -0.5rem;
+    top: 0;
+    font-size: 1.2em;
+    opacity: 0.7;
 }
-.hook-card p:first-child {
-    margin-bottom: 1rem;
-}
-.hook-card strong {
-    color: var(--secondary-accent);
-}
+
 .closing-line {
     text-align: center;
-    margin-top: 3rem;
-    font-size: 1.2rem;
+    margin-top: 4rem; /* Increased margin-top */
+    font-size: clamp(1.1rem, 1.5vw, 1.3rem); /* Larger and more prominent */
     font-family: var(--font-heading);
-    max-width: 800px;
+    max-width: 900px;
     margin-left: auto;
     margin-right: auto;
     line-height: 1.6;
+    color: var(--primary-color); /* Make it stand out more */
 }
+
 @media (max-width: 992px) {
     .gap-problem-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Stack on smaller screens */
         gap: 2rem;
     }
-    .gap-problem .section-header {
-        text-align: center;
+    .gap-problem-image {
+        order: 1; /* Image first on mobile */
     }
     .gap-problem-content {
-        text-align: center;
+        order: 2; /* Text second on mobile */
+        text-align: center; /* Center text on mobile */
+    }
+    .gap-problem-content h2 {
+        text-align: center; /* Center heading on mobile */
+    }
+    .text-block.highlight h3 {
+        padding-left: 0;
+    }
+    .text-block.highlight h3::before {
+        display: none; /* Hide icon on mobile for cleaner look */
     }
 }
 
