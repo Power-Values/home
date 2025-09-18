@@ -984,6 +984,48 @@
             color: var(--secondary-accent);
             font-weight: bold;
         }
+        
+        /* New Logos Section */
+        .logo-partners {
+            background-color: var(--fdf8fa);
+            padding: 2rem 0;
+            text-align: center;
+        }
+        .logo-partners h3 {
+            margin-bottom: 1.5rem;
+        }
+        .logo-grid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        .logo-item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 150px; /* Base size */
+            height: 60px;
+            transition: all 0.5s ease-in-out;
+            cursor: pointer;
+            position: relative;
+        }
+        .logo-item img {
+            max-width: 100%;
+            max-height: 100%;
+            height: auto;
+            object-fit: contain;
+            transition: all 0.5s ease-in-out;
+        }
+        
+        /* The CSS for the logos' color change */
+        .logo-item.invert-color {
+            filter: grayscale(100%) brightness(50%) sepia(100%) hue-rotate(330deg) saturate(300%) contrast(150%);
+        }
+        .logo-item.invert-color:hover {
+            filter: none;
+        }
 
         /* Resources Section */
         .resources {
@@ -1662,6 +1704,31 @@
                                 <li>And lead from that place with clarity, alignment, and confidence</li>
                             </ul>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- As Seen On Section - Updated to reflect media mentions -->
+        <section class="logo-partners">
+            <div class="container">
+                <h2 class="section-header">As Seen On</h2>
+                <div class="logo-grid">
+                    <!-- Logos from the provided image. Please replace these image paths with your own. -->
+                    <div class="logo-item invert-color">
+                        <img src="images/bbc-capital-logo.png" alt="BBC Capital Logo">
+                    </div>
+                    <div class="logo-item invert-color">
+                        <img src="images/jetstar-logo.png" alt="Jetstar Logo">
+                    </div>
+                    <div class="logo-item invert-color">
+                        <img src="images/home-business-logo.png" alt="Home Business Logo">
+                    </div>
+                    <div class="logo-item invert-color">
+                        <img src="images/grit-daily-logo.png" alt="Grit Daily Logo">
+                    </div>
+                    <div class="logo-item invert-color">
+                        <img src="images/authority-magazine-logo.png" alt="Authority Magazine Logo">
                     </div>
                 </div>
             </div>
