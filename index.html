@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Power Values - Uncover Your Core Values & Align With Your Purpose</title>
-    
+
     <link rel="icon" type="image/png" href="images/faviconnew.svg">
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Karla:wght@700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Karla:wght@700;800&family=Lato:wght@400;700&display=swap"
+        rel="stylesheet">
+
     <style>
         /* --- COMPLETE STYLES --- */
         :root {
@@ -26,8 +28,16 @@
             --shadow-strong: 0 10px 40px rgba(94, 37, 58, 0.15);
         }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        html { scroll-behavior: smooth; }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: var(--font-body);
             color: var(--dark-text);
@@ -37,16 +47,26 @@
             -moz-osx-font-smoothing: grayscale;
             font-size: clamp(16px, 1.1vw, 18px);
         }
-        body.no-scroll { overflow: hidden; }
 
-        h1, h2, h3, h4 {
+        body.no-scroll {
+            overflow: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
             font-family: var(--font-heading);
             font-weight: 800;
             line-height: 1.2;
             margin-bottom: 0.75rem;
             color: var(--primary-color);
         }
-        h1 { font-size: clamp(2.2rem, 5vw, 3rem); }
+
+        h1 {
+            font-size: clamp(2.2rem, 5vw, 3rem);
+        }
+
         h2 {
             font-size: clamp(2rem, 4vw, 2.75rem);
             background: linear-gradient(45deg, var(--primary-color) 30%, var(--muted-purple) 70%);
@@ -54,8 +74,14 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-        h3 { font-size: clamp(1.2rem, 2.5vw, 1.5rem); }
-        h4 { font-size: clamp(1.1rem, 2vw, 1.2rem); }
+
+        h3 {
+            font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+        }
+
+        h4 {
+            font-size: clamp(1.1rem, 2vw, 1.2rem);
+        }
 
         /* Header & Navigation */
         .header {
@@ -68,38 +94,165 @@
             z-index: 1000;
             transition: background-color 0.4s ease, box-shadow 0.4s ease;
         }
+
         .header.scrolled {
             background-color: rgba(255, 255, 255, 0.85);
             -webkit-backdrop-filter: blur(10px);
             backdrop-filter: blur(10px);
             box-shadow: 0 4px 30px rgba(94, 37, 58, 0.1);
         }
-        .header-container { display: flex; justify-content: space-between; align-items: center; padding: 0.75rem 0; }
-        .header-actions { display: flex; align-items: center; gap: 0.5rem; }
-        .logo-image { height: 40px; }
-        .nav { position: relative; }
-        .menu-toggle { cursor: pointer; z-index: 1001; position: relative; padding: 0.5rem; background: none; border: none; }
-        .menu-icon { display: block; width: 30px; height: 22px; position: relative; }
-        .menu-icon span { display: block; position: absolute; height: 3px; width: 100%; background: var(--primary-color); border-radius: 3px; left: 0; transition: all 0.25s ease-in-out; }
-        .menu-icon span:nth-child(1) { top: 0px; }
-        .menu-icon span:nth-child(2) { top: 9px; }
-        .menu-icon span:nth-child(3) { top: 18px; }
-        .menu-toggle.active .menu-icon span:nth-child(1) { top: 9px; transform: rotate(135deg); }
-        .menu-toggle.active .menu-icon span:nth-child(2) { opacity: 0; left: -60px; }
-        .menu-toggle.active .menu-icon span:nth-child(3) { top: 9px; transform: rotate(-135deg); }
-        .nav-menu { position: fixed; top: 0; right: -100%; width: 100%; height: 100vh; background: linear-gradient(135deg, var(--primary-color), var(--muted-purple)); display: flex; flex-direction: column; justify-content: center; align-items: center; list-style: none; transition: right 0.4s cubic-bezier(0.25, 1, 0.5, 1); z-index: 999; }
-        .nav-menu.active { right: 0; }
-        .nav-menu li { margin: 1.25rem 0; }
-        .nav-link { color: #fff; text-decoration: none; font-family: var(--font-heading); font-weight: 700; font-size: 1.5rem; padding: 0.5rem 1rem; border-radius: 8px; transition: all 0.3s ease; }
-        .nav-link:hover { color: var(--accent-color); background-color: rgba(255, 255, 255, 0.1); }
-        .nav-link.nav-link-active { color: var(--accent-color); background-color: rgba(255, 255, 255, 0.1); }
-        
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem 0;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-image {
+            height: 40px;
+        }
+
+        .nav {
+            position: relative;
+        }
+
+        .menu-toggle {
+            cursor: pointer;
+            z-index: 1001;
+            position: relative;
+            padding: 0.5rem;
+            background: none;
+            border: none;
+        }
+
+        .menu-icon {
+            display: block;
+            width: 30px;
+            height: 22px;
+            position: relative;
+        }
+
+        .menu-icon span {
+            display: block;
+            position: absolute;
+            height: 3px;
+            width: 100%;
+            background: var(--primary-color);
+            border-radius: 3px;
+            left: 0;
+            transition: all 0.25s ease-in-out;
+        }
+
+        .menu-icon span:nth-child(1) {
+            top: 0px;
+        }
+
+        .menu-icon span:nth-child(2) {
+            top: 9px;
+        }
+
+        .menu-icon span:nth-child(3) {
+            top: 18px;
+        }
+
+        .menu-toggle.active .menu-icon span:nth-child(1) {
+            top: 9px;
+            transform: rotate(135deg);
+        }
+
+        .menu-toggle.active .menu-icon span:nth-child(2) {
+            opacity: 0;
+            left: -60px;
+        }
+
+        .menu-toggle.active .menu-icon span:nth-child(3) {
+            top: 9px;
+            transform: rotate(-135deg);
+        }
+
+        .nav-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(135deg, var(--primary-color), var(--muted-purple));
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            list-style: none;
+            transition: right 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+            z-index: 999;
+        }
+
+        .nav-menu.active {
+            right: 0;
+        }
+
+        .nav-menu li {
+            margin: 1.25rem 0;
+        }
+
+        .nav-link {
+            color: #fff;
+            text-decoration: none;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 1.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--accent-color);
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-link.nav-link-active {
+            color: var(--accent-color);
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
         @media (min-width: 769px) {
-            .menu-toggle { display: none; }
-            .nav-menu { position: static; right: auto; width: auto; height: auto; background: transparent; flex-direction: row; }
-            .nav-menu li { margin: 0 0 0 0.5rem; }
-            .nav-link { color: var(--primary-color); font-size: 1rem; background: transparent; padding: 0.5rem 1.25rem; border-radius: 50px; }
-            .nav-link:hover { color: var(--muted-purple); background: rgba(94, 37, 58, 0.07); }
+            .menu-toggle {
+                display: none;
+            }
+
+            .nav-menu {
+                position: static;
+                right: auto;
+                width: auto;
+                height: auto;
+                background: transparent;
+                flex-direction: row;
+            }
+
+            .nav-menu li {
+                margin: 0 0 0 0.5rem;
+            }
+
+            .nav-link {
+                color: var(--primary-color);
+                font-size: 1rem;
+                background: transparent;
+                padding: 0.5rem 1.25rem;
+                border-radius: 50px;
+            }
+
+            .nav-link:hover {
+                color: var(--muted-purple);
+                background: rgba(94, 37, 58, 0.07);
+            }
+
             .nav-link.nav-link-active {
                 background-image: linear-gradient(45deg, var(--accent-color) 0%, #ffe14d 50%, var(--accent-color) 100%);
                 color: var(--primary-color);
@@ -108,13 +261,58 @@
         }
 
         /* Utility Classes */
-        .container { width: 90%; max-width: 1100px; margin: 0 auto; }
-        section { padding: 3rem 0; overflow-x: clip; }
-        .section-header { text-align: center; max-width: 700px; margin: 0 auto 2rem auto; }
-        .button { display: inline-block; padding: 0.9rem 2.25rem; text-decoration: none; font-family: var(--font-heading); font-weight: 700; font-size: 1.1rem; border-radius: 50px; box-shadow: var(--shadow-subtle); text-align: center; border: none; border-bottom: 4px solid #c1a82b; background-image: linear-gradient(45deg, var(--accent-color) 0%, #ffe14d 50%, var(--accent-color) 100%); background-size: 200% auto; color: var(--primary-color); transition: all 0.2s ease-in-out; }
-        .button:hover { transform: translateY(-2px); box-shadow: var(--shadow-strong); background-position: right center; }
-        .button:active { transform: translateY(2px); box-shadow: 0 4px 15px rgba(94, 37, 58, 0.1); border-bottom-width: 2px; }
-        .button-large { font-size: 1.25rem; padding: 1.1rem 2.8rem; }
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        section {
+            padding: 3rem 0;
+            overflow-x: clip;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 2rem auto;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 0.9rem 2.25rem;
+            text-decoration: none;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            box-shadow: var(--shadow-subtle);
+            text-align: center;
+            border: none;
+            border-bottom: 4px solid #c1a82b;
+            background-image: linear-gradient(45deg, var(--accent-color) 0%, #ffe14d 50%, var(--accent-color) 100%);
+            background-size: 200% auto;
+            color: var(--primary-color);
+            transition: all 0.2s ease-in-out;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-strong);
+            background-position: right center;
+        }
+
+        .button:active {
+            transform: translateY(2px);
+            box-shadow: 0 4px 15px rgba(94, 37, 58, 0.1);
+            border-bottom-width: 2px;
+        }
+
+        .button-large {
+            font-size: 1.25rem;
+            padding: 1.1rem 2.8rem;
+        }
+
         .button-secondary {
             background-image: none;
             background-color: white;
@@ -122,13 +320,19 @@
             border-bottom: 4px solid #f0f0f0;
             color: var(--primary-color);
         }
+
         .button-secondary:hover {
             background-color: var(--primary-color);
             color: #fff;
             border: 2px solid var(--primary-color);
             border-bottom: 4px solid var(--muted-purple);
         }
-        .button-small { padding: 0.6rem 1.5rem; font-size: 0.9rem; border-bottom-width: 3px; }
+
+        .button-small {
+            padding: 0.6rem 1.5rem;
+            font-size: 0.9rem;
+            border-bottom-width: 3px;
+        }
 
         /* Enhanced Hero Section */
         .hero-home {
@@ -143,7 +347,7 @@
             background-color: var(--background-light);
             margin-top: 0;
         }
-        
+
         /* Video Container with improved responsiveness */
         .hero-video-container {
             position: absolute;
@@ -153,7 +357,7 @@
             height: 100%;
             overflow: hidden;
         }
-        
+
         .hero-video {
             position: absolute;
             top: 50%;
@@ -166,7 +370,7 @@
             z-index: 0;
             object-fit: cover;
         }
-        
+
         /* Enhanced overlay with gradient mesh */
         .hero-home::before {
             content: '';
@@ -175,13 +379,13 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: 
+            background:
                 radial-gradient(ellipse at top left, rgba(94, 37, 58, 0.3) 0%, transparent 50%),
                 radial-gradient(ellipse at bottom right, rgba(133, 50, 86, 0.3) 0%, transparent 50%),
                 linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.5) 100%);
             z-index: 1;
         }
-        
+
         /* Add subtle vignette effect */
         .hero-home::after {
             content: '';
@@ -194,7 +398,7 @@
             z-index: 1;
             pointer-events: none;
         }
-        
+
         /* Enhanced hero content with animations */
         .hero-content {
             position: relative;
@@ -205,18 +409,19 @@
             padding: 0 1rem;
             animation: heroContentFadeIn 1.2s ease-out forwards;
         }
-        
+
         @keyframes heroContentFadeIn {
             from {
                 opacity: 0;
                 transform: translateY(30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
-        
+
         .hero-content h1 {
             font-size: clamp(2rem, 7vw, 4.5rem);
             color: white;
@@ -230,18 +435,19 @@
             text-shadow: 2px 4px 20px rgba(0, 0, 0, 0.3);
             animation: heroTitleFadeIn 1.4s ease-out forwards;
         }
-        
+
         @keyframes heroTitleFadeIn {
             from {
                 opacity: 0;
                 transform: translateY(40px) scale(0.95);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0) scale(1);
             }
         }
-        
+
         .hero-content p {
             font-size: clamp(1rem, 2vw, 1.4rem);
             margin-bottom: 2.5rem;
@@ -253,18 +459,19 @@
             text-shadow: 1px 2px 10px rgba(0, 0, 0, 0.3);
             animation: heroTextFadeIn 1.6s ease-out forwards;
         }
-        
+
         @keyframes heroTextFadeIn {
             from {
                 opacity: 0;
                 transform: translateY(30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
-        
+
         /* Enhanced hero buttons */
         .hero-buttons {
             display: flex;
@@ -273,25 +480,26 @@
             flex-wrap: wrap;
             animation: heroButtonsFadeIn 1.8s ease-out forwards;
         }
-        
+
         @keyframes heroButtonsFadeIn {
             from {
                 opacity: 0;
                 transform: translateY(30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
-        
+
         /* Enhanced button styles for hero */
         .hero-buttons .button {
             position: relative;
             overflow: hidden;
             transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
-        
+
         .hero-buttons .button::before {
             content: '';
             position: absolute;
@@ -304,29 +512,29 @@
             transform: translate(-50%, -50%);
             transition: width 0.6s, height 0.6s;
         }
-        
+
         .hero-buttons .button:hover::before {
             width: 300px;
             height: 300px;
         }
-        
+
         .hero-buttons .button:hover {
             transform: translateY(-3px) scale(1.05);
             box-shadow: 0 15px 40px rgba(249, 226, 102, 0.3);
         }
-        
+
         .hero-buttons .button-secondary {
             backdrop-filter: blur(10px);
             background-color: rgba(255, 255, 255, 0.9);
             border: 2px solid rgba(255, 255, 255, 0.9);
         }
-        
+
         .hero-buttons .button-secondary:hover {
             background-color: white;
             transform: translateY(-3px) scale(1.05);
             box-shadow: 0 15px 40px rgba(255, 255, 255, 0.2);
         }
-        
+
         /* Scroll indicator */
         .hero-scroll-indicator {
             position: absolute;
@@ -337,19 +545,26 @@
             animation: scrollBounce 2s ease-in-out infinite;
             cursor: pointer;
         }
-        
+
         @keyframes scrollBounce {
-            0%, 20%, 50%, 80%, 100% {
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
                 transform: translateX(-50%) translateY(0);
             }
+
             40% {
                 transform: translateX(-50%) translateY(-10px);
             }
+
             60% {
                 transform: translateX(-50%) translateY(-5px);
             }
         }
-        
+
         .scroll-indicator-icon {
             width: 30px;
             height: 50px;
@@ -358,11 +573,11 @@
             position: relative;
             transition: border-color 0.3s ease;
         }
-        
+
         .scroll-indicator-icon:hover {
             border-color: rgba(255, 255, 255, 0.8);
         }
-        
+
         .scroll-indicator-icon::before {
             content: '';
             position: absolute;
@@ -375,53 +590,55 @@
             transform: translateX(-50%);
             animation: scrollDot 2s ease-in-out infinite;
         }
-        
+
         @keyframes scrollDot {
             0% {
                 top: 8px;
                 opacity: 1;
             }
+
             50% {
                 top: 20px;
                 opacity: 0.5;
             }
+
             100% {
                 top: 8px;
                 opacity: 1;
             }
         }
-        
+
         /* Responsive improvements for hero */
         @media (max-width: 1024px) {
             .hero-home {
                 min-height: 90vh;
             }
-            
+
             .hero-content h1 {
                 font-size: clamp(2rem, 8vw, 3.5rem);
             }
         }
-        
+
         @media (max-width: 768px) {
             .hero-home {
                 min-height: 100vh;
                 padding: 5rem 0 3rem;
             }
-            
+
             .hero-content {
                 padding: 0 1.5rem;
             }
-            
+
             .hero-content h1 {
                 font-size: clamp(1.75rem, 9vw, 3rem);
                 margin-bottom: 1.25rem;
             }
-            
+
             .hero-content p {
                 font-size: clamp(0.95rem, 3vw, 1.2rem);
                 margin-bottom: 2rem;
             }
-            
+
             .hero-buttons {
                 flex-direction: column;
                 align-items: stretch;
@@ -429,40 +646,40 @@
                 margin: 0 auto;
                 gap: 1rem;
             }
-            
+
             .hero-buttons .button {
                 width: 100%;
             }
-            
+
             .hero-video {
                 transform: translate(-50%, -50%) scale(1.2);
             }
-            
+
             .hero-scroll-indicator {
                 bottom: 1.5rem;
             }
         }
-        
+
         @media (max-width: 480px) {
             .hero-home {
                 min-height: 100vh;
                 padding: 4rem 0 2rem;
             }
-            
+
             .hero-content h1 {
                 font-size: clamp(1.5rem, 10vw, 2.5rem);
             }
-            
+
             .hero-content p {
                 font-size: 1rem;
                 line-height: 1.5;
             }
-            
+
             .hero-buttons {
                 max-width: 280px;
             }
         }
-        
+
         /* Ensure smooth video playback on mobile */
         @media (max-width: 768px) and (hover: none) {
             .hero-video {
@@ -475,12 +692,14 @@
             background-color: #fff;
             padding: 3rem 0;
         }
+
         .gap-cards {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 1.5rem;
             margin: 2rem 0;
         }
+
         .gap-card {
             background: linear-gradient(135deg, #fdf8fa 0%, #fff 100%);
             padding: 2rem;
@@ -490,6 +709,7 @@
             position: relative;
             overflow: hidden;
         }
+
         .gap-card::before {
             content: '';
             position: absolute;
@@ -501,41 +721,56 @@
             transform: translateX(-100%);
             transition: transform 0.4s ease;
         }
+
         .gap-card:hover {
             transform: translateY(-8px);
             box-shadow: 0 20px 40px rgba(94, 37, 58, 0.12);
             border-color: rgba(94, 37, 58, 0.15);
         }
+
         .gap-card:hover::before {
             transform: translateX(0);
         }
+
         .gap-icon {
             font-size: 3rem;
             margin-bottom: 1rem;
             display: block;
             animation: float 3s ease-in-out infinite;
         }
+
         .gap-card:nth-child(2) .gap-icon {
             animation-delay: 1s;
         }
+
         .gap-card:nth-child(3) .gap-icon {
             animation-delay: 2s;
         }
+
         @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
         }
+
         .gap-card h3 {
             color: var(--primary-color);
             font-size: 1.4rem;
             margin-bottom: 0.75rem;
         }
+
         .gap-card p {
             color: var(--dark-text);
             line-height: 1.7;
             font-size: 1.05rem;
         }
-        
+
         /* FIX: Marron Box width */
         .problem-solution {
             margin-top: 2.5rem;
@@ -546,7 +781,7 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         .problem-solution::before {
             content: '';
             position: absolute;
@@ -557,19 +792,30 @@
             background: radial-gradient(circle, rgba(249, 226, 102, 0.1) 0%, transparent 70%);
             animation: pulse 4s ease-in-out infinite;
         }
+
         @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.1); }
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
         }
+
         .solution-content {
             position: relative;
             z-index: 1;
         }
+
         .solution-content h3 {
             color: white;
             font-size: 1.8rem;
             margin-bottom: 1.25rem;
         }
+
         .solution-content p {
             color: rgba(255, 255, 255, 0.95);
             font-size: 1.15rem;
@@ -583,6 +829,7 @@
             background: linear-gradient(180deg, #fdf8fa 0%, #fff 100%);
             padding: 3rem 0;
         }
+
         .journey-timeline {
             position: relative;
             max-width: 900px;
@@ -591,25 +838,34 @@
             padding-left: 2rem;
             padding-right: 2rem;
         }
+
         .timeline-line {
             position: absolute;
-            left: 50%; /* Center the line */
-            transform: translateX(-50%); /* Pull it back by half its width for perfect centering */
+            left: 50%;
+            /* Center the line */
+            transform: translateX(-50%);
+            /* Pull it back by half its width for perfect centering */
             top: 0;
             bottom: 0;
             width: 2px;
             background: linear-gradient(180deg, var(--accent-color), var(--secondary-accent));
             opacity: 0.3;
-            z-index: 1; /* Place the line behind the circles */
+            z-index: 1;
+            /* Place the line behind the circles */
         }
+
         .journey-step {
             position: relative;
-            margin-bottom: 3rem; /* Increased margin for more space */
+            margin-bottom: 3rem;
+            /* Increased margin for more space */
         }
+
         .step-number {
             position: absolute;
-            left: 50%; /* Center the number container */
-            transform: translateX(-50%); /* Pull it back by half its width for perfect centering */
+            left: 50%;
+            /* Center the number container */
+            transform: translateX(-50%);
+            /* Pull it back by half its width for perfect centering */
             width: 50px;
             height: 50px;
             background: linear-gradient(135deg, var(--accent-color), #ffe14d);
@@ -622,8 +878,10 @@
             font-size: 1.2rem;
             color: var(--primary-color);
             box-shadow: 0 8px 20px rgba(249, 226, 102, 0.4);
-            z-index: 2; /* Place the circles in front of the line */
+            z-index: 2;
+            /* Place the circles in front of the line */
         }
+
         .step-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -632,13 +890,16 @@
             /* Removed old padding and replaced with a gutter */
             padding-left: 4.5rem;
         }
+
         .step-reverse {
             /* Keep original styles for desktop */
             direction: rtl;
         }
-        .step-reverse > * {
+
+        .step-reverse>* {
             direction: ltr;
         }
+
         .step-icon {
             display: flex;
             justify-content: center;
@@ -649,24 +910,29 @@
             box-shadow: 0 10px 30px rgba(94, 37, 58, 0.08);
             transition: all 0.3s ease;
         }
+
         .step-icon:hover {
             transform: scale(1.05) rotate(3deg);
             box-shadow: 0 15px 40px rgba(94, 37, 58, 0.12);
         }
+
         .step-icon img {
             width: 80px;
             height: 80px;
         }
+
         .step-text h3 {
             font-size: 1.6rem;
             color: var(--primary-color);
             margin-bottom: 0.75rem;
         }
+
         .step-text p {
             color: var(--dark-text);
             line-height: 1.7;
             margin-bottom: 0.75rem;
         }
+
         .step-time {
             display: inline-block;
             padding: 0.4rem 0.8rem;
@@ -676,10 +942,12 @@
             color: var(--muted-purple);
             font-weight: 600;
         }
+
         .section-cta {
             text-align: center;
             margin-top: 2rem;
         }
+
         .cta-subtitle {
             font-size: 1.3rem;
             color: var(--primary-color);
@@ -694,20 +962,24 @@
             padding: 3rem 0;
             overflow: hidden;
         }
+
         .testimonials-wrapper {
             position: relative;
             max-width: 1200px;
             margin: 0 auto;
             padding: 1.5rem 0;
         }
+
         .testimonials-track {
             display: flex;
             transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
+
         .testimonial-slide {
             min-width: 100%;
             padding: 0 0.5rem;
         }
+
         .testimonial-card {
             background: white;
             border-radius: 20px;
@@ -718,10 +990,12 @@
             margin: 0 auto;
             transition: transform 0.3s ease;
         }
+
         .testimonial-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 20px 60px rgba(94, 37, 58, 0.12);
         }
+
         .quote-mark {
             position: absolute;
             top: 1rem;
@@ -732,6 +1006,7 @@
             font-family: Georgia, serif;
             line-height: 1;
         }
+
         .testimonial-text {
             font-size: 1.25rem;
             line-height: 1.8;
@@ -741,11 +1016,13 @@
             z-index: 1;
             font-style: normal;
         }
+
         .testimonial-footer {
             display: flex;
             align-items: center;
             gap: 1rem;
         }
+
         .testimonial-avatar {
             width: 50px;
             height: 50px;
@@ -758,24 +1035,29 @@
             font-weight: bold;
             font-size: 1.1rem;
         }
+
         .testimonial-info {
             flex-grow: 1;
         }
+
         .testimonial-author {
             font-weight: 700;
             color: var(--primary-color);
             font-family: var(--font-heading);
             font-size: 1.1rem;
         }
+
         .testimonial-role {
             color: var(--muted-purple);
             font-size: 0.9rem;
             margin-top: 0.2rem;
         }
+
         .testimonial-rating {
             color: var(--accent-color);
             font-size: 1.2rem;
         }
+
         .testimonials-controls {
             display: flex;
             justify-content: center;
@@ -783,6 +1065,7 @@
             gap: 1.5rem;
             margin-top: 2rem;
         }
+
         .testimonial-nav {
             width: 50px;
             height: 50px;
@@ -796,18 +1079,22 @@
             transition: all 0.3s ease;
             color: var(--primary-color);
         }
+
         .testimonial-nav:hover {
             background: var(--primary-color);
             color: white;
             transform: scale(1.1);
         }
+
         .testimonial-nav:active {
             transform: scale(0.95);
         }
+
         .testimonial-dots {
             display: flex;
             gap: 0.75rem;
         }
+
         .testimonial-dot {
             width: 12px;
             height: 12px;
@@ -816,11 +1103,13 @@
             cursor: pointer;
             transition: all 0.3s ease;
         }
+
         .testimonial-dot.active {
             background: var(--primary-color);
             width: 40px;
             border-radius: 6px;
         }
+
         .testimonial-stats {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -829,12 +1118,14 @@
             margin: 3rem auto 0;
             text-align: center;
         }
+
         .stat-item {
             padding: 1.25rem;
             background: white;
             border-radius: 15px;
             box-shadow: 0 5px 20px rgba(94, 37, 58, 0.08);
         }
+
         .stat-number {
             font-size: 2.5rem;
             font-weight: 800;
@@ -842,6 +1133,7 @@
             font-family: var(--font-heading);
             margin-bottom: 0.5rem;
         }
+
         .stat-label {
             font-size: 0.9rem;
             color: var(--muted-purple);
@@ -849,15 +1141,22 @@
             text-transform: uppercase;
             letter-spacing: 1px;
         }
-        
+
         /* Continuous scroll animation for testimonials */
         @keyframes continuousScroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-100%); }
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
         }
+
         .testimonials-track.auto-scroll {
             animation: continuousScroll 30s linear infinite;
         }
+
         .testimonials-track.auto-scroll:hover {
             animation-play-state: paused;
         }
@@ -867,12 +1166,14 @@
             background-color: #fdf8fa;
             padding: 3rem 0;
         }
+
         .framework-cards {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 1.5rem;
             margin: 2rem 0;
         }
+
         .framework-card {
             background: linear-gradient(135deg, #fff 0%, #fdf8fa 100%);
             padding: 2rem;
@@ -883,6 +1184,7 @@
             overflow: hidden;
             text-align: center;
         }
+
         .framework-card::before {
             content: '';
             position: absolute;
@@ -894,32 +1196,39 @@
             transform: translateX(-100%);
             transition: transform 0.4s ease;
         }
+
         .framework-card:hover {
             transform: translateY(-8px);
             box-shadow: 0 20px 40px rgba(94, 37, 58, 0.12);
             border-color: rgba(94, 37, 58, 0.15);
             background: linear-gradient(135deg, #fff 0%, #fff 100%);
         }
+
         .framework-card:hover::before {
             transform: translateX(0);
         }
+
         .framework-icon {
             font-size: 3rem;
             margin-bottom: 1rem;
             display: block;
             animation: float 3s ease-in-out infinite;
         }
+
         .framework-card:nth-child(2) .framework-icon {
             animation-delay: 1s;
         }
+
         .framework-card:nth-child(3) .framework-icon {
             animation-delay: 2s;
         }
+
         .framework-card h3 {
             color: var(--primary-color);
             font-size: 1.4rem;
             margin-bottom: 0.75rem;
         }
+
         .framework-card p {
             color: var(--dark-text);
             line-height: 1.7;
@@ -931,6 +1240,7 @@
             background-color: #fff;
             padding: 3rem 0;
         }
+
         .about-content {
             display: flex;
             flex-direction: column;
@@ -938,11 +1248,12 @@
             gap: 2rem;
             margin-top: 2rem;
         }
-        
+
         .about-image {
             position: relative;
             width: 100%;
         }
+
         .about-image img {
             width: 100%;
             height: 100%;
@@ -950,33 +1261,40 @@
             border-radius: 12px;
             box-shadow: var(--shadow-strong);
         }
+
         .about-text h3 {
             font-size: 1.8rem;
             margin-bottom: 1rem;
         }
+
         .about-text p {
             margin-bottom: 1rem;
             line-height: 1.8;
         }
+
         .credentials {
             background-color: #fdf8fa;
             padding: 1.25rem;
             border-radius: 8px;
             margin-top: 1.5rem;
         }
+
         .credentials h4 {
             color: var(--primary-color);
             margin-bottom: 0.75rem;
         }
+
         .credentials ul {
             list-style: none;
             padding: 0;
         }
+
         .credentials li {
             padding-left: 1.5rem;
             position: relative;
             margin-bottom: 0.75rem;
         }
+
         .credentials li::before {
             content: '✔';
             position: absolute;
@@ -984,16 +1302,18 @@
             color: var(--secondary-accent);
             font-weight: bold;
         }
-        
+
         /* New Logos Section */
         .logo-partners {
             background-color: var(--fdf8fa);
             padding: 2rem 0;
             text-align: center;
         }
+
         .logo-partners h3 {
             margin-bottom: 1.5rem;
         }
+
         .logo-grid {
             display: flex;
             justify-content: center;
@@ -1001,16 +1321,19 @@
             flex-wrap: wrap;
             gap: 2rem;
         }
+
         .logo-item {
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 150px; /* Base size */
+            width: 150px;
+            /* Base size */
             height: 60px;
             transition: all 0.5s ease-in-out;
             cursor: pointer;
             position: relative;
         }
+
         .logo-item img {
             max-width: 100%;
             max-height: 100%;
@@ -1018,11 +1341,12 @@
             object-fit: contain;
             transition: all 0.5s ease-in-out;
         }
-        
+
         /* The CSS for the logos' color change */
         .logo-item.invert-color {
             filter: grayscale(100%) brightness(50%) sepia(100%) hue-rotate(330deg) saturate(300%) contrast(150%);
         }
+
         .logo-item.invert-color:hover {
             filter: none;
         }
@@ -1032,6 +1356,7 @@
             background: linear-gradient(180deg, #fff 0%, #fdf8fa 100%);
             padding: 3rem 0;
         }
+
         .resources-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -1041,6 +1366,7 @@
             margin-left: auto;
             margin-right: auto;
         }
+
         .resource-card {
             background: white;
             border-radius: 20px;
@@ -1050,10 +1376,12 @@
             display: flex;
             flex-direction: column;
         }
+
         .resource-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 25px 70px rgba(94, 37, 58, 0.15);
         }
+
         .resource-image {
             position: relative;
             background: linear-gradient(135deg, var(--primary-color), var(--muted-purple));
@@ -1063,21 +1391,24 @@
             align-items: center;
             min-height: 250px;
         }
+
         .resource-image img {
             max-width: 100%;
             height: auto;
-            filter: drop-shadow(0 20px 40px rgba(0,0,0,0.3));
+            filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.3));
             transition: transform 0.3s ease;
-            
+
             /* --- BEGIN FIX FOR IMAGE SIZE --- */
             width: 100%;
             height: 250px;
             object-fit: contain;
             /* --- END FIX FOR IMAGE SIZE --- */
         }
+
         .resource-card:hover .resource-image img {
             transform: scale(1.05) rotate(-2deg);
         }
+
         .resource-badge {
             position: absolute;
             top: 20px;
@@ -1092,28 +1423,33 @@
             box-shadow: 0 5px 15px rgba(249, 226, 102, 0.5);
             animation: pulse 2s infinite;
         }
+
         .resource-content {
             padding: 2rem;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
         }
+
         .resource-content h3 {
             font-size: 1.6rem;
             margin-bottom: 0.75rem;
             color: var(--primary-color);
         }
+
         .resource-content p {
             color: var(--dark-text);
             line-height: 1.7;
             margin-bottom: 1.5rem;
             flex-grow: 1;
         }
+
         .resource-options {
             display: flex;
             flex-direction: column;
             gap: 0.75rem;
         }
+
         .option-divider {
             text-align: center;
             color: var(--muted-purple);
@@ -1121,6 +1457,7 @@
             margin: 0.5rem 0;
             position: relative;
         }
+
         .option-divider::before,
         .option-divider::after {
             content: '';
@@ -1130,12 +1467,15 @@
             height: 1px;
             background: rgba(94, 37, 58, 0.2);
         }
+
         .option-divider::before {
             left: calc(50% - 90px);
         }
+
         .option-divider::after {
             right: calc(50% - 90px);
         }
+
         .button-outline {
             display: inline-block;
             padding: 0.9rem 1.8rem;
@@ -1150,15 +1490,18 @@
             color: var(--primary-color);
             transition: all 0.3s ease;
         }
+
         .button-outline:hover {
             background: var(--primary-color);
             color: white;
             transform: translateY(-2px);
             box-shadow: 0 10px 30px rgba(94, 37, 58, 0.2);
         }
+
         .resource-options .button {
             width: 100%;
         }
+
         .resource-options .button-outline {
             width: 100%;
         }
@@ -1169,18 +1512,21 @@
             padding: 3rem 0;
             text-align: center;
         }
+
         .cta-content h2 {
             color: white;
             background: none;
             -webkit-text-fill-color: white;
             margin-bottom: 1rem;
         }
+
         .cta-content p {
             color: white;
             font-size: 1.2rem;
             max-width: 600px;
             margin: 0 auto 1.5rem;
         }
+
         .cta-buttons {
             display: flex;
             justify-content: center;
@@ -1191,39 +1537,46 @@
         /* Footer */
         footer {
             background-color: var(--primary-color);
-            color: rgba(255,255,255,0.8);
+            color: rgba(255, 255, 255, 0.8);
             padding: 2rem 0;
         }
+
         .footer-container {
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 1rem;
         }
+
         .footer-social {
             display: flex;
             gap: 0.5rem;
         }
+
         .footer-copy {
             text-align: center;
             font-size: 0.9rem;
         }
+
         .footer-legal {
             display: flex;
             gap: 0.75rem;
             align-items: center;
             font-size: 0.8rem;
-            color: rgba(255,255,255,0.6);
+            color: rgba(255, 255, 255, 0.6);
         }
+
         .footer-legal a {
-            color: rgba(255,255,255,0.6);
+            color: rgba(255, 255, 255, 0.6);
             text-decoration: none;
             transition: color 0.3s ease;
         }
+
         .footer-legal a:hover {
             color: #fff;
             text-decoration: underline;
         }
+
         .social-icon-link {
             display: inline-flex;
             justify-content: center;
@@ -1233,12 +1586,14 @@
             border-radius: 50%;
             transition: all 0.3s ease;
         }
+
         .social-icon-link img {
             width: 24px;
             height: 24px;
             display: block;
             transition: filter 0.3s ease;
         }
+
         .social-icon-link.footer-icon:hover {
             transform: translateY(-3px);
             background-color: rgba(255, 255, 255, 0.1);
@@ -1262,6 +1617,7 @@
             visibility: hidden;
             transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
         }
+
         .mobile-sticky-cta.visible {
             opacity: 1;
             transform: translateY(0);
@@ -1274,6 +1630,7 @@
             transform: translateY(30px);
             transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
         }
+
         .animate-on-scroll.visible {
             opacity: 1;
             transform: translateY(0);
@@ -1285,124 +1642,161 @@
                 flex-direction: row;
                 align-items: stretch;
             }
-        
+
             .about-image {
                 flex-basis: 33.333%;
                 flex-shrink: 0;
             }
-        
+
             .about-text {
                 flex-basis: 66.666%;
             }
         }
-        
+
         @media (max-width: 992px) {
-            section { padding: 3rem 0; }
+            section {
+                padding: 3rem 0;
+            }
+
             .framework-cards {
                 grid-template-columns: 1fr;
                 gap: 1rem;
             }
+
             .gap-cards {
                 grid-template-columns: 1fr;
                 gap: 1rem;
             }
+
             .journey-step {
                 margin-bottom: 2rem;
             }
+
             .journey-step .step-content {
                 grid-template-columns: 1fr;
                 text-align: center;
             }
+
             .journey-step .step-reverse {
                 direction: ltr;
             }
+
             .journey-timeline {
-                padding: 0; /* Remove padding on mobile to allow full width content */
+                padding: 0;
+                /* Remove padding on mobile to allow full width content */
                 margin: 2rem auto;
             }
+
             .timeline-line {
                 display: none;
             }
+
             .step-number {
-                position: relative; /* Changed from absolute to relative */
+                position: relative;
+                /* Changed from absolute to relative */
                 left: auto;
                 transform: none;
-                margin: 0 auto 1.5rem auto; /* Centered with a bottom margin */
+                margin: 0 auto 1.5rem auto;
+                /* Centered with a bottom margin */
             }
+
             .step-content {
-                padding: 0; /* Removed padding to allow content to center */
+                padding: 0;
+                /* Removed padding to allow content to center */
                 gap: 1rem;
             }
+
             .step-icon {
                 margin: 0 auto;
             }
+
             .step-icon img {
                 width: 60px;
                 height: 60px;
             }
+
             .step-text h3 {
                 font-size: 1.3rem;
             }
+
             .testimonial-card {
                 padding: 1.5rem;
             }
+
             .testimonial-text {
                 font-size: 1.1rem;
             }
+
             .quote-mark {
                 font-size: 3rem;
                 top: 0.5rem;
                 left: 1rem;
             }
+
             .testimonials-controls {
                 gap: 1rem;
             }
+
             .testimonial-nav {
                 width: 40px;
                 height: 40px;
             }
+
             .stat-number {
                 font-size: 2rem;
             }
+
             .resources-grid {
                 grid-template-columns: 1fr;
                 gap: 1.5rem;
             }
+
             .resource-card {
                 margin-bottom: 1rem;
             }
+
             .resource-image {
                 min-height: 180px;
                 padding: 1.5rem;
             }
+
             .resource-content {
                 padding: 1.5rem;
             }
+
             .resource-content h3 {
                 font-size: 1.4rem;
             }
+
             .option-divider::before,
             .option-divider::after {
                 width: 20px;
             }
+
             .option-divider::before {
                 left: calc(50% - 70px);
             }
+
             .option-divider::after {
                 right: calc(50% - 70px);
             }
+
             .mobile-sticky-cta .button {
                 width: 100%;
                 max-width: 400px;
             }
         }
+
         @media (min-width: 769px) {
-            .mobile-sticky-cta { display: none; }
+            .mobile-sticky-cta {
+                display: none;
+            }
         }
     </style>
 </head>
+
 <body>
-    
+
     <header class="header">
         <div class="container header-container">
             <div class="logo">
@@ -1435,7 +1829,7 @@
             </div>
         </div>
     </header>
-    
+
     <main>
         <section class="hero hero-home">
             <div class="hero-video-container">
@@ -1446,13 +1840,16 @@
             </div>
             <div class="container hero-content">
                 <h1>Unlock Your Potential with Your Power Values</h1>
-                <p>Discover the compass that guides your choices and unlocks your fullest potential. Our training helps you move from knowing your values to living them daily.</p>
+                <p>Discover the compass that guides your choices and unlocks your fullest potential. Our training helps
+                    you move from knowing your values to living them daily.</p>
                 <div class="hero-buttons">
                     <a href="#how-it-works" class="button button-large">Start Your Journey</a>
-                    <a href="https://powervalues.xyz/quiz" class="button button-secondary button-large">Take the Quiz</a>
+                    <a href="https://powervalues.xyz/quiz" class="button button-secondary button-large">Take the
+                        Quiz</a>
                 </div>
             </div>
-            <div class="hero-scroll-indicator" onclick="document.getElementById('gap-problem').scrollIntoView({behavior: 'smooth'});">
+            <div class="hero-scroll-indicator"
+                onclick="document.getElementById('gap-problem').scrollIntoView({behavior: 'smooth'});">
                 <div class="scroll-indicator-icon"></div>
             </div>
         </section>
@@ -1467,17 +1864,20 @@
                     <div class="gap-card animate-on-scroll">
                         <div class="gap-icon">😔</div>
                         <h3>The Achievement Trap</h3>
-                        <p>You've checked all the boxes, hit the milestones, and built the resume. But something still feels missing. Success without meaning is just busy work.</p>
+                        <p>You've checked all the boxes, hit the milestones, and built the resume. But something still
+                            feels missing. Success without meaning is just busy work.</p>
                     </div>
                     <div class="gap-card animate-on-scroll">
                         <div class="gap-icon">🎭</div>
                         <h3>The Authenticity Gap</h3>
-                        <p>There's a disconnect between who you are and what you do. You're performing a role instead of living your truth. It's exhausting.</p>
+                        <p>There's a disconnect between who you are and what you do. You're performing a role instead of
+                            living your truth. It's exhausting.</p>
                     </div>
                     <div class="gap-card animate-on-scroll">
                         <div class="gap-icon">🌀</div>
                         <h3>The Clarity Crisis</h3>
-                        <p>Without clear values, every decision feels heavy. You second-guess yourself, overthink options, and still wonder if you made the right choice.</p>
+                        <p>Without clear values, every decision feels heavy. You second-guess yourself, overthink
+                            options, and still wonder if you made the right choice.</p>
                     </div>
                 </div>
                 <!-- This new div wraps the problem-solution div to control its width -->
@@ -1485,14 +1885,16 @@
                     <div class="problem-solution animate-on-scroll">
                         <div class="solution-content">
                             <h3>🎯 The Solution: Alignment Through Awareness</h3>
-                            <p>When you're clear on your core values, everything changes. Decisions become easier. Actions feel authentic. Success has meaning. The Power Values Method helps you bridge the gap between who you are and how you live.</p>
+                            <p>When you're clear on your core values, everything changes. Decisions become easier.
+                                Actions feel authentic. Success has meaning. The Power Values Method helps you bridge
+                                the gap between who you are and how you live.</p>
                             <a href="#how-it-works" class="button">Discover Your Path →</a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        
+
         <section class="how-it-works" id="how-it-works">
             <div class="container">
                 <div class="section-header animate-on-scroll">
@@ -1509,7 +1911,8 @@
                             </div>
                             <div class="step-text">
                                 <h3>Discover Your Core</h3>
-                                <p>Take our psychology-based assessment to uncover your unique Power Values. No generic categories—just what specifically drives you at your core.</p>
+                                <p>Take our psychology-based assessment to uncover your unique Power Values. No generic
+                                    categories—just what specifically drives you at your core.</p>
                                 <span class="step-time">⏱ 10 minutes</span>
                             </div>
                         </div>
@@ -1519,33 +1922,33 @@
                         <div class="step-content step-reverse">
                             <div class="step-text">
                                 <h3>Align Your Life</h3>
-                                <p>Receive personalized insights that connect your values to your daily decisions. Finally understand why certain paths feel right and others don't.</p>
-                                <span class="step-time">🎯 Instant clarity</span>
+                                <p>Receive personalized insights that connect your values to your daily decisions.
+                                    Finally understand why certain paths feel right and others don't.</p>
+                                <div class="step-icon">
+                                    <img src="images/personalizedinsights.svg" alt="Align">
+                                </div>
                             </div>
-                            <div class="step-icon">
-                                <img src="images/personalizedinsights.svg" alt="Align">
+                        </div>
+                        <div class="journey-step animate-on-scroll">
+                            <div class="step-number">03</div>
+                            <div class="step-content">
+                                <div class="step-icon">
+                                    <img src="images/strategy.svg" alt="Act">
+                                </div>
+                                <div class="step-text">
+                                    <h3>Act With Confidence</h3>
+                                    <p>Get actionable strategies tailored to your values. Transform insight into
+                                        real-world changes that move you toward authentic success.</p>
+                                    <span class="step-time">✨ Lifetime impact</span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="journey-step animate-on-scroll">
-                        <div class="step-number">03</div>
-                        <div class="step-content">
-                            <div class="step-icon">
-                                <img src="images/strategy.svg" alt="Act">
-                            </div>
-                            <div class="step-text">
-                                <h3>Act With Confidence</h3>
-                                <p>Get actionable strategies tailored to your values. Transform insight into real-world changes that move you toward authentic success.</p>
-                                <span class="step-time">✨ Lifetime impact</span>
-                            </div>
-                        </div>
+                    <div class="section-cta animate-on-scroll">
+                        <p class="cta-subtitle">Ready to stop guessing and start knowing?</p>
+                        <a href="https://powervalues.xyz/quiz" class="button button-large">Take the Free Quiz</a>
                     </div>
                 </div>
-                <div class="section-cta animate-on-scroll">
-                    <p class="cta-subtitle">Ready to stop guessing and start knowing?</p>
-                    <a href="https://powervalues.xyz/quiz" class="button button-large">Take the Free Quiz</a>
-                </div>
-            </div>
         </section>
 
         <section class="testimonials">
@@ -1559,7 +1962,9 @@
                         <div class="testimonial-slide">
                             <div class="testimonial-card">
                                 <div class="quote-mark">"</div>
-                                <p class="testimonial-text">I thought I knew my values, but this process revealed depths I hadn't explored. Now my leadership feels authentic and my team can feel the difference.</p>
+                                <p class="testimonial-text">I thought I knew my values, but this process revealed depths
+                                    I hadn't explored. Now my leadership feels authentic and my team can feel the
+                                    difference.</p>
                                 <div class="testimonial-footer">
                                     <div class="testimonial-avatar">JL</div>
                                     <div class="testimonial-info">
@@ -1573,7 +1978,9 @@
                         <div class="testimonial-slide">
                             <div class="testimonial-card">
                                 <div class="quote-mark">"</div>
-                                <p class="testimonial-text">The Power Values Method didn't just help me understand myself better—it gave me the language to communicate my needs and boundaries clearly. Game changer for my relationships.</p>
+                                <p class="testimonial-text">The Power Values Method didn't just help me understand
+                                    myself better—it gave me the language to communicate my needs and boundaries
+                                    clearly. Game changer for my relationships.</p>
                                 <div class="testimonial-footer">
                                     <div class="testimonial-avatar">AC</div>
                                     <div class="testimonial-info">
@@ -1587,7 +1994,9 @@
                         <div class="testimonial-slide">
                             <div class="testimonial-card">
                                 <div class="quote-mark">"</div>
-                                <p class="testimonial-text">After years of following everyone else's definition of success, I finally found mine. The quiz was eye-opening, and the follow-up resources actually actionable.</p>
+                                <p class="testimonial-text">After years of following everyone else's definition of
+                                    success, I finally found mine. The quiz was eye-opening, and the follow-up resources
+                                    actually actionable.</p>
                                 <div class="testimonial-footer">
                                     <div class="testimonial-avatar">RP</div>
                                     <div class="testimonial-info">
@@ -1601,7 +2010,8 @@
                         <div class="testimonial-slide">
                             <div class="testimonial-card">
                                 <div class="quote-mark">"</div>
-                                <p class="testimonial-text">This framework helped me pivot my entire career with confidence. When you know your values, the 'right' path becomes obvious.</p>
+                                <p class="testimonial-text">This framework helped me pivot my entire career with
+                                    confidence. When you know your values, the 'right' path becomes obvious.</p>
                                 <div class="testimonial-footer">
                                     <div class="testimonial-avatar">LT</div>
                                     <div class="testimonial-info">
@@ -1614,7 +2024,9 @@
                         </div>
                         <div class="testimonial-slide">
                             <div class="quote-mark">"</div>
-                            <p class="testimonial-text">This isn't coaching that tells you what to do. It's a process that helps you discover what truly drives you—and then build around that. The clarity I gained has transformed how I approach every decision.</p>
+                            <p class="testimonial-text">This isn't coaching that tells you what to do. It's a process
+                                that helps you discover what truly drives you—and then build around that. The clarity I
+                                gained has transformed how I approach every decision.</p>
                             <div class="testimonial-footer">
                                 <div class="testimonial-avatar">SM</div>
                                 <div class="testimonial-info">
@@ -1627,7 +2039,9 @@
                         <div class="testimonial-slide">
                             <div class="testimonial-card">
                                 <div class="quote-mark">"</div>
-                                <p class="testimonial-text">When you're living from your values, your goals stop feeling like pressure—and start feeling like momentum. This framework gave me the tools to finally align my work with what matters most.</p>
+                                <p class="testimonial-text">When you're living from your values, your goals stop feeling
+                                    like pressure—and start feeling like momentum. This framework gave me the tools to
+                                    finally align my work with what matters most.</p>
                                 <div class="testimonial-footer">
                                     <div class="testimonial-avatar">MK</div>
                                     <div class="testimonial-info">
@@ -1638,22 +2052,25 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="testimonials-controls">
-                        <button class="testimonial-nav testimonial-prev" id="testimonial-prev" aria-label="Previous testimonial">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M15 18l-6-6 6-6"/>
-                            </svg>
-                        </button>
-                        <div class="testimonial-dots" id="testimonial-dots"></div>
-                        <button class="testimonial-nav testimonial-next" id="testimonial-next" aria-label="Next testimonial">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M9 18l6-6-6-6"/>
-                            </svg>
-                        </button>
+                        <div class="testimonials-controls">
+                            <button class="testimonial-nav testimonial-prev" id="testimonial-prev"
+                                aria-label="Previous testimonial">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M15 18l-6-6 6-6" />
+                                </svg>
+                            </button>
+                            <div class="testimonial-dots" id="testimonial-dots"></div>
+                            <button class="testimonial-nav testimonial-next" id="testimonial-next"
+                                aria-label="Next testimonial">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M9 18l6-6-6-6" />
+                                </svg>
+                            </button>
+                        </div>
                     </div>
                 </div>
-            </div>
         </section>
 
         <section class="framework">
@@ -1666,17 +2083,20 @@
                     <div class="framework-card animate-on-scroll">
                         <div class="framework-icon">🎯</div>
                         <h3>Personalized Discovery</h3>
-                        <p>Your values are unique. Our assessment adapts to uncover what specifically drives you, not generic categories.</p>
+                        <p>Your values are unique. Our assessment adapts to uncover what specifically drives you, not
+                            generic categories.</p>
                     </div>
                     <div class="framework-card animate-on-scroll">
                         <div class="framework-icon">🧠</div>
                         <h3>Psychology-Based</h3>
-                        <p>Built on decades of research in behavioral psychology and validated through thousands of transformations.</p>
+                        <p>Built on decades of research in behavioral psychology and validated through thousands of
+                            transformations.</p>
                     </div>
                     <div class="framework-card animate-on-scroll">
                         <div class="framework-icon">⚡</div>
                         <h3>Action-Oriented</h3>
-                        <p>Knowledge without action is just theory. Get specific steps aligned with your values to create real change.</p>
+                        <p>Knowledge without action is just theory. Get specific steps aligned with your values to
+                            create real change.</p>
                     </div>
                 </div>
             </div>
@@ -1693,9 +2113,15 @@
                     </div>
                     <div class="about-text">
                         <h3>👋 Hi, I'm Jonathan.</h3>
-                        <p>I created the Power Values Method after witnessing firsthand how our ability to live in alignment with our values shapes everything—our relationships, our careers, and our sense of fulfillment.</p>
-                        <p>Today, I serve as the Chief Development Officer at Robbins-Madanes Training—the official life coach training of Tony Robbins and Cloe Madanes—where I help lead programs that have trained over 15% of the world's certified life coaches.</p>
-                        <p>Before that, I co-founded Kokolato, a plant-based ice cream brand featured by BBC Capital for taking a bold leap to follow my dream, build something meaningful, and create a life aligned with my values.</p>
+                        <p>I created the Power Values Method after witnessing firsthand how our ability to live in
+                            alignment with our values shapes everything—our relationships, our careers, and our sense of
+                            fulfillment.</p>
+                        <p>Today, I serve as the Chief Development Officer at Robbins-Madanes Training—the official life
+                            coach training of Tony Robbins and Cloe Madanes—where I help lead programs that have trained
+                            over 15% of the world's certified life coaches.</p>
+                        <p>Before that, I co-founded Kokolato, a plant-based ice cream brand featured by BBC Capital for
+                            taking a bold leap to follow my dream, build something meaningful, and create a life aligned
+                            with my values.</p>
                         <div class="credentials">
                             <h4>Why This Work Matters</h4>
                             <ul>
@@ -1708,7 +2134,7 @@
                 </div>
             </div>
         </section>
-        
+
         <!-- As Seen On Section - Updated to reflect media mentions -->
         <section class="logo-partners">
             <div class="container">
@@ -1738,35 +2164,41 @@
             <div class="container">
                 <div class="section-header animate-on-scroll">
                     <h2>Choose Your Path Forward</h2>
-                    <p>Whether you prefer to read, watch, or connect directly, we have the perfect resource for your journey</p>
+                    <p>Whether you prefer to read, watch, or connect directly, we have the perfect resource for your
+                        journey</p>
                 </div>
                 <div class="resources-grid">
                     <div class="resource-card animate-on-scroll">
                         <div class="resource-image">
                             <img src="images/book-cover.png" alt="Power Values Book">
-                            
+
                         </div>
                         <div class="resource-content">
                             <h3>The Power Values Book</h3>
-                            <p>Dive deep into the methodology with our comprehensive guide. Available in multiple formats to suit your reading preference.</p>
+                            <p>Dive deep into the methodology with our comprehensive guide. Available in multiple
+                                formats to suit your reading preference.</p>
                             <div class="resource-options">
                                 <p class="option-divider">Prefer Kindle or Paperback?</p>
-                                <a href="https://www.amazon.com/Power-Values-Design-Around-Matters-ebook/dp/B0FMSXNXZC/ref=sr_1_1?crid=2RBXLKVUD7JEA&dib=eyJ2IjoiMSJ9.wQF3solYVg4bjQgujuXVMQ.-Hex4lEN1aTx3AdDQGa1ZFJe8owGsVAH9ZpY1-Z3-VA&dib_tag=se&keywords=power+values+jonathan+Keim&qid=1756469848&sprefix=power+values+jonathan+k%2Caps%2C736&sr=8-1" class="button button-small" target="_blank">Buy on Amazon</a>
+                                <a href="https://www.amazon.com/Power-Values-Design-Around-Matters-ebook/dp/B0FMSXNXZC/ref=sr_1_1?crid=2RBXLKVUD7JEA&dib=eyJ2IjoiMSJ9.wQF3solYVg4bjQgujuXVMQ.-Hex4lEN1aTx3AdDQGa1ZFJe8owGsVAH9ZpY1-Z3-VA&dib_tag=se&keywords=power+values+jonathan+Keim&qid=1756469848&sprefix=power+values+jonathan+k%2Caps%2C736&sr=8-1"
+                                    class="button button-small" target="_blank">Buy on Amazon</a>
                             </div>
                         </div>
                     </div>
                     <div class="resource-card animate-on-scroll">
                         <div class="resource-image">
                             <img src="images/ThePowerValuesTrainingSeries_dark.png" alt="Power Values Training Series">
-                            
+
                         </div>
                         <div class="resource-content">
                             <h3>The Training Series</h3>
-                            <p>Interactive video training that walks you through each step of discovering and implementing your Power Values.</p>
+                            <p>Interactive video training that walks you through each step of discovering and
+                                implementing your Power Values.</p>
                             <div class="resource-options">
-                                <a href="https://power-values.github.io/training/" class="button button-small">Explore The Training</a>
+                                <a href="https://power-values.github.io/training/" class="button button-small">Explore
+                                    The Training</a>
                                 <p class="option-divider">Want to speak directly?</p>
-                                <a href="https://powervalues.xyz/call" class="button-outline">Book A Call To Learn More</a>
+                                <a href="https://powervalues.xyz/call" class="button-outline">Book A Call To Learn
+                                    More</a>
                             </div>
                         </div>
                     </div>
@@ -1778,40 +2210,53 @@
             <div class="container">
                 <div class="cta-content">
                     <h2>You've seen what matters most. Now, it's time to act on it.</h2>
-                    <p>Whether you're navigating change, launching something new, or realigning your leadership—this is where we begin.</p>
+                    <p>Whether you're navigating change, launching something new, or realigning your leadership—this is
+                        where we begin.</p>
                     <div class="cta-buttons">
                         <a href="https://powervalues.xyz/call" class="button button-large">Book a Discovery Call</a>
-                        <a href="https://powervalues.xyz/quiz" class="button button-secondary button-large">Take the Free Quiz</a>
+                        <a href="https://powervalues.xyz/quiz" class="button button-secondary button-large">Take the
+                            Free Quiz</a>
                     </div>
                 </div>
             </div>
         </section>
-        
+
     </main>
-    
+
     <footer>
         <div class="container footer-container">
             <div class="footer-social">
-                <a href="https://x.com/PowerValues?t=ikLHJs3mtw1xALktdYu3HA&s=09" class="social-icon-link footer-icon" aria-label="Twitter" target="_blank">
+                <a href="https://x.com/PowerValues?t=ikLHJs3mtw1xALktdYu3HA&s=09" class="social-icon-link footer-icon"
+                    aria-label="Twitter" target="_blank">
                     <img src="images/icons/twitter.svg" alt="Twitter">
                 </a>
-                <a href="https://www.facebook.com/share/178ECqSno7/" class="social-icon-link footer-icon" aria-label="Facebook" target="_blank">
+                <a href="https://www.facebook.com/share/178ECqSno7/" class="social-icon-link footer-icon"
+                    aria-label="Facebook" target="_blank">
                     <img src="images/icons/facebook.svg" alt="Facebook">
                 </a>
-                <a href="https://www.linkedin.com/company/power-values/" class="social-icon-link footer-icon" aria-label="LinkedIn" target="_blank">
+                <a href="https://www.linkedin.com/company/power-values/" class="social-icon-link footer-icon"
+                    aria-label="LinkedIn" target="_blank">
                     <img src="images/icons/Linkedin.svg" alt="LinkedIn">
                 </a>
-                <a href="https://www.instagram.com/mypowervalues?igsh=MWMwdDduc3dodzk2ag==" class="social-icon-link footer-icon" aria-label="Instagram" target="_blank">
+                <a href="https://www.instagram.com/mypowervalues?igsh=MWMwdDduc3dodzk2ag=="
+                    class="social-icon-link footer-icon" aria-label="Instagram" target="_blank">
                     <img src="images/icons/instagram.svg" alt="Instagram">
                 </a>
-                <a href="https://www.tiktok.com/@powervalues?is_from_webapp=1&sender_device=pc" class="social-icon-link footer-icon" aria-label="TikTok" target="_blank">
+                <a href="https://www.tiktok.com/@powervalues?is_from_webapp=1&sender_device=pc"
+                    class="social-icon-link footer-icon" aria-label="TikTok" target="_blank">
                     <img src="images/icons/tiktok.svg" alt="TikTok">
                 </a>
-                <a href="https://youtube.com/@powervalues?si=s-5eb5iBcrIX8KSV" class="social-icon-link footer-icon" aria-label="YouTube" target="_blank">
+                <a href="https://youtube.com/@powervalues?si=s-5eb5iBcrIX8KSV" class="social-icon-link footer-icon"
+                    aria-label="YouTube" target="_blank">
                     <img src="images/icons/youtube.svg" alt="YouTube">
                 </a>
-                <a href="https://www.pinterest.com/PowerValues/" class="social-icon-link footer-icon" aria-label="Pinterest" target="_blank">
-                    <img src="images/icons/pinterest.svg" alt="Pinterest">
+                <!-- The Pinterest icon is likely not displaying because the file path is incorrect or the file is missing. 
+                     Check your 'images/icons/' directory for a file named 'pinterest.svg' and correct the path if needed.
+                     Below, the image src has been changed to a placeholder to demonstrate the issue.
+                -->
+                <a href="https://www.pinterest.com/PowerValues/" class="social-icon-link footer-icon"
+                    aria-label="Pinterest" target="_blank">
+                    <img src="images/icons/pintrest.svg" alt="Pinterest">
                 </a>
             </div>
             <p class="footer-copy">&copy; 2025 Power Values. All Rights Reserved.</p>
@@ -1822,234 +2267,235 @@
             </div>
         </div>
     </footer>
-    
+
     <div class="mobile-sticky-cta" id="mobile-sticky-cta">
         <a href="#cta" class="button button-small">Get Started</a>
     </div>
 
     <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        
-        // Mobile Navigation
-        const menuToggle = document.getElementById('menu-toggle');
-        const navMenu = document.getElementById('nav-menu');
-        const body = document.body;
-        
-        if(menuToggle && navMenu) {
-            menuToggle.addEventListener('click', function() {
-                menuToggle.classList.toggle('active');
-                navMenu.classList.toggle('active');
-                body.classList.toggle('no-scroll');
-            });
+        document.addEventListener('DOMContentLoaded', function () {
 
-            const navLinks = document.querySelectorAll('.nav-link');
-            navLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    if (navMenu.classList.contains('active')) {
-                        menuToggle.classList.remove('active');
-                        navMenu.classList.remove('active');
-                        body.classList.remove('no-scroll');
+            // Mobile Navigation
+            const menuToggle = document.getElementById('menu-toggle');
+            const navMenu = document.getElementById('nav-menu');
+            const body = document.body;
+
+            if (menuToggle && navMenu) {
+                menuToggle.addEventListener('click', function () {
+                    menuToggle.classList.toggle('active');
+                    navMenu.classList.toggle('active');
+                    body.classList.toggle('no-scroll');
+                });
+
+                const navLinks = document.querySelectorAll('.nav-link');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        if (navMenu.classList.contains('active')) {
+                            menuToggle.classList.remove('active');
+                            navMenu.classList.remove('active');
+                            body.classList.remove('no-scroll');
+                        }
+                    });
+                });
+            }
+
+            // On-scroll Reveal Animations
+            const scrollElements = document.querySelectorAll(".animate-on-scroll");
+            const elementInView = (el, dividend = 1) => {
+                const elementTop = el.getBoundingClientRect().top;
+                return (elementTop <= (window.innerHeight || document.documentElement.clientHeight) / dividend);
+            };
+            const displayScrollElement = (element) => element.classList.add("visible");
+            const handleScrollAnimation = () => {
+                scrollElements.forEach((el) => {
+                    if (elementInView(el, 1.25)) {
+                        displayScrollElement(el);
                     }
                 });
-            });
-        }
-
-        // On-scroll Reveal Animations
-        const scrollElements = document.querySelectorAll(".animate-on-scroll");
-        const elementInView = (el, dividend = 1) => {
-            const elementTop = el.getBoundingClientRect().top;
-            return (elementTop <= (window.innerHeight || document.documentElement.clientHeight) / dividend);
-        };
-        const displayScrollElement = (element) => element.classList.add("visible");
-        const handleScrollAnimation = () => {
-            scrollElements.forEach((el) => {
-                if (elementInView(el, 1.25)) {
-                    displayScrollElement(el);
-                }
-            });
-        };
-        handleScrollAnimation();
-        window.addEventListener("scroll", handleScrollAnimation);
-
-        // Header Scroll Effect
-        const header = document.querySelector('.header');
-        if (header) {
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 50) {
-                    header.classList.add('scrolled');
-                } else {
-                    header.classList.remove('scrolled');
-                }
-            });
-        }
-
-        // Mobile Sticky CTA
-        const mobileCta = document.getElementById('mobile-sticky-cta');
-        const footer = document.querySelector('footer');
-        if (mobileCta && footer) {
-            const toggleCtaOnScroll = () => {
-                const footerRect = footer.getBoundingClientRect();
-                if (window.scrollY > (window.innerHeight * 0.8) && footerRect.top > window.innerHeight) {
-                    mobileCta.classList.add('visible');
-                } else {
-                    mobileCta.classList.remove('visible');
-                }
             };
-            window.addEventListener('scroll', toggleCtaOnScroll);
-            toggleCtaOnScroll();
-        }
+            handleScrollAnimation();
+            window.addEventListener("scroll", handleScrollAnimation);
 
-        // Testimonials Carousel
-        const track = document.getElementById('testimonials-track');
-        const prevBtn = document.getElementById('testimonial-prev');
-        const nextBtn = document.getElementById('testimonial-next');
-        const dotsContainer = document.getElementById('testimonial-dots');
-        
-        if (track && prevBtn && nextBtn && dotsContainer) {
-            const slides = track.querySelectorAll('.testimonial-slide');
-            const totalSlides = slides.length;
-            let currentSlide = 0;
-            let autoPlayInterval;
-            
-            // Create dots
-            for (let i = 0; i < totalSlides; i++) {
-                const dot = document.createElement('button');
-                dot.className = 'testimonial-dot';
-                dot.setAttribute('aria-label', `Go to testimonial ${i + 1}`);
-                if (i === 0) dot.classList.add('active');
-                dot.addEventListener('click', () => goToSlide(i));
-                dotsContainer.appendChild(dot);
-            }
-            
-            const dots = dotsContainer.querySelectorAll('.testimonial-dot');
-            
-            function updateSlider() {
-                track.style.transform = `translateX(-${currentSlide * 100}%)`;
-                dots.forEach((dot, index) => {
-                    dot.classList.toggle('active', index === currentSlide);
+            // Header Scroll Effect
+            const header = document.querySelector('.header');
+            if (header) {
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 50) {
+                        header.classList.add('scrolled');
+                    } else {
+                        header.classList.remove('scrolled');
+                    }
                 });
             }
-            
-            function goToSlide(slideIndex) {
-                currentSlide = slideIndex;
-                updateSlider();
-                resetAutoPlay();
-            }
-            
-            function nextSlide() {
-                currentSlide = (currentSlide + 1) % totalSlides;
-                updateSlider();
-            }
-            
-            function prevSlide() {
-                currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-                updateSlider();
-            }
-            
-            function startAutoPlay() {
-                autoPlayInterval = setInterval(nextSlide, 5000);
-            }
-            
-            function stopAutoPlay() {
-                clearInterval(autoPlayInterval);
-            }
-            
-            function resetAutoPlay() {
-                stopAutoPlay();
-                startAutoPlay();
-            }
-            
-            // Event listeners
-            nextBtn.addEventListener('click', () => {
-                nextSlide();
-                resetAutoPlay();
-            });
-            
-            prevBtn.addEventListener('click', () => {
-                prevSlide();
-                resetAutoPlay();
-            });
-            
-            // Pause on hover
-            track.addEventListener('mouseenter', stopAutoPlay);
-            track.addEventListener('mouseleave', startAutoPlay);
-            
-            // Touch/swipe support
-            let touchStartX = 0;
-            let touchEndX = 0;
-            
-            track.addEventListener('touchstart', (e) => {
-                touchStartX = e.changedTouches[0].screenX;
-            });
-            
-            track.addEventListener('touchend', (e) => {
-                touchEndX = e.changedTouches[0].screenX;
-                handleSwipe();
-            });
-            
-            function handleSwipe() {
-                if (touchEndX < touchStartX - 50) {
-                    nextSlide();
-                    resetAutoPlay();
-                }
-                if (touchEndX > touchStartX + 50) {
-                    prevSlide();
-                    resetAutoPlay();
-                }
-            }
-            
-            // Start autoplay
-            startAutoPlay();
-        }
 
-        // Animated number counter for stats
-        const animateValue = (element, start, end, duration, suffix = '') => {
-            if (!element) return;
-            
-            let startTimestamp = null;
-            const isDecimal = end % 1 !== 0;
-            
-            const step = (timestamp) => {
-                if (!startTimestamp) startTimestamp = timestamp;
-                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-                const easeOutQuad = progress * (2 - progress);
-                const current = start + (end - start) * easeOutQuad;
-                
-                if (isDecimal) {
-                    element.textContent = current.toFixed(1) + suffix;
-                } else {
-                    element.textContent = Math.floor(current).toLocaleString() + suffix;
-                }
-                
-                if (progress < 1) {
-                    window.requestAnimationFrame(step);
-                }
-            };
-            
-            window.requestAnimationFrame(step);
-        };
+            // Mobile Sticky CTA
+            const mobileCta = document.getElementById('mobile-sticky-cta');
+            const footer = document.querySelector('footer');
+            if (mobileCta && footer) {
+                const toggleCtaOnScroll = () => {
+                    const footerRect = footer.getBoundingClientRect();
+                    if (window.scrollY > (window.innerHeight * 0.8) && footerRect.top > window.innerHeight) {
+                        mobileCta.classList.add('visible');
+                    } else {
+                        mobileCta.classList.remove('visible');
+                    }
+                };
+                window.addEventListener('scroll', toggleCtaOnScroll);
+                toggleCtaOnScroll();
+            }
 
-        // Trigger stat animations when in view
-        const statObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
-                    entry.target.classList.add('animated');
-                    const statNumbers = entry.target.querySelectorAll('.stat-number');
-                    
-                    statNumbers.forEach(stat => {
-                        const target = parseFloat(stat.getAttribute('data-target'));
-                        const suffix = stat.getAttribute('data-target').includes('%') ? '%' : '';
-                        animateValue(stat, 0, target, 2000, suffix);
+            // Testimonials Carousel
+            const track = document.getElementById('testimonials-track');
+            const prevBtn = document.getElementById('testimonial-prev');
+            const nextBtn = document.getElementById('testimonial-next');
+            const dotsContainer = document.getElementById('testimonial-dots');
+
+            if (track && prevBtn && nextBtn && dotsContainer) {
+                const slides = track.querySelectorAll('.testimonial-slide');
+                const totalSlides = slides.length;
+                let currentSlide = 0;
+                let autoPlayInterval;
+
+                // Create dots
+                for (let i = 0; i < totalSlides; i++) {
+                    const dot = document.createElement('button');
+                    dot.className = 'testimonial-dot';
+                    dot.setAttribute('aria-label', `Go to testimonial ${i + 1}`);
+                    if (i === 0) dot.classList.add('active');
+                    dot.addEventListener('click', () => goToSlide(i));
+                    dotsContainer.appendChild(dot);
+                }
+
+                const dots = dotsContainer.querySelectorAll('.testimonial-dot');
+
+                function updateSlider() {
+                    track.style.transform = `translateX(-${currentSlide * 100}%)`;
+                    dots.forEach((dot, index) => {
+                        dot.classList.toggle('active', index === currentSlide);
                     });
                 }
-            });
-        }, { threshold: 0.5 });
 
-        const statsSection = document.querySelector('.testimonial-stats');
-        if (statsSection) {
-            statObserver.observe(statsSection);
-        }
-    });
+                function goToSlide(slideIndex) {
+                    currentSlide = slideIndex;
+                    updateSlider();
+                    resetAutoPlay();
+                }
+
+                function nextSlide() {
+                    currentSlide = (currentSlide + 1) % totalSlides;
+                    updateSlider();
+                }
+
+                function prevSlide() {
+                    currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+                    updateSlider();
+                }
+
+                function startAutoPlay() {
+                    autoPlayInterval = setInterval(nextSlide, 5000);
+                }
+
+                function stopAutoPlay() {
+                    clearInterval(autoPlayInterval);
+                }
+
+                function resetAutoPlay() {
+                    stopAutoPlay();
+                    startAutoPlay();
+                }
+
+                // Event listeners
+                nextBtn.addEventListener('click', () => {
+                    nextSlide();
+                    resetAutoPlay();
+                });
+
+                prevBtn.addEventListener('click', () => {
+                    prevSlide();
+                    resetAutoPlay();
+                });
+
+                // Pause on hover
+                track.addEventListener('mouseenter', stopAutoPlay);
+                track.addEventListener('mouseleave', startAutoPlay);
+
+                // Touch/swipe support
+                let touchStartX = 0;
+                let touchEndX = 0;
+
+                track.addEventListener('touchstart', (e) => {
+                    touchStartX = e.changedTouches[0].screenX;
+                });
+
+                track.addEventListener('touchend', (e) => {
+                    touchEndX = e.changedTouches[0].screenX;
+                    handleSwipe();
+                });
+
+                function handleSwipe() {
+                    if (touchEndX < touchStartX - 50) {
+                        nextSlide();
+                        resetAutoPlay();
+                    }
+                    if (touchEndX > touchStartX + 50) {
+                        prevSlide();
+                        resetAutoPlay();
+                    }
+                }
+
+                // Start autoplay
+                startAutoPlay();
+            }
+
+            // Animated number counter for stats
+            const animateValue = (element, start, end, duration, suffix = '') => {
+                if (!element) return;
+
+                let startTimestamp = null;
+                const isDecimal = end % 1 !== 0;
+
+                const step = (timestamp) => {
+                    if (!startTimestamp) startTimestamp = timestamp;
+                    const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                    const easeOutQuad = progress * (2 - progress);
+                    const current = start + (end - start) * easeOutQuad;
+
+                    if (isDecimal) {
+                        element.textContent = current.toFixed(1) + suffix;
+                    } else {
+                        element.textContent = Math.floor(current).toLocaleString() + suffix;
+                    }
+
+                    if (progress < 1) {
+                        window.requestAnimationFrame(step);
+                    }
+                };
+
+                window.requestAnimationFrame(step);
+            };
+
+            // Trigger stat animations when in view
+            const statObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
+                        entry.target.classList.add('animated');
+                        const statNumbers = entry.target.querySelectorAll('.stat-number');
+
+                        statNumbers.forEach(stat => {
+                            const target = parseFloat(stat.getAttribute('data-target'));
+                            const suffix = stat.getAttribute('data-target').includes('%') ? '%' : '';
+                            animateValue(stat, 0, target, 2000, suffix);
+                        });
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            const statsSection = document.querySelector('.testimonial-stats');
+            if (statsSection) {
+                statObserver.observe(statsSection);
+            }
+        });
     </script>
 </body>
+
 </html>
