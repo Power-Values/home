@@ -545,9 +545,6 @@
             text-align: center;
             position: relative;
             overflow: hidden;
-            /* Added max-width and margin auto for centering */
-            max-width: 90%; 
-            margin: 2.5rem auto 0 auto;
         }
         
         .problem-solution::before {
@@ -1441,11 +1438,14 @@
                         <p>Without clear values, every decision feels heavy. You second-guess yourself, overthink options, and still wonder if you made the right choice.</p>
                     </div>
                 </div>
-                <div class="problem-solution animate-on-scroll">
-                    <div class="solution-content">
-                        <h3>🎯 The Solution: Alignment Through Awareness</h3>
-                        <p>When you're clear on your core values, everything changes. Decisions become easier. Actions feel authentic. Success has meaning. The Power Values Method helps you bridge the gap between who you are and how you live.</p>
-                        <a href="#how-it-works" class="button">Discover Your Path →</a>
+                <!-- This new div wraps the problem-solution div to control its width -->
+                <div class="problem-solution-wrapper">
+                    <div class="problem-solution animate-on-scroll">
+                        <div class="solution-content">
+                            <h3>🎯 The Solution: Alignment Through Awareness</h3>
+                            <p>When you're clear on your core values, everything changes. Decisions become easier. Actions feel authentic. Success has meaning. The Power Values Method helps you bridge the gap between who you are and how you live.</p>
+                            <a href="#how-it-works" class="button">Discover Your Path →</a>
+                        </div>
                     </div>
                 </div>
             </div>
