@@ -535,6 +535,8 @@
             line-height: 1.7;
             font-size: 1.05rem;
         }
+        
+        /* FIX: Marron Box width */
         .problem-solution {
             margin-top: 2.5rem;
             background: linear-gradient(135deg, var(--primary-color), var(--muted-purple));
@@ -543,7 +545,11 @@
             text-align: center;
             position: relative;
             overflow: hidden;
+            /* Added max-width and margin auto for centering */
+            max-width: 90%; 
+            margin: 2.5rem auto 0 auto;
         }
+        
         .problem-solution::before {
             content: '';
             position: absolute;
@@ -1375,13 +1381,13 @@
                         </span>
                     </button>
                     <ul class="nav-menu" id="nav-menu">
-                        <li><a href="#" class="nav-link nav-link-active">Home</a></li>
-                        <li><a href="#" class="nav-link">Call</a></li>
-                        <li><a href="#" class="nav-link">Book</a></li>
-                        <li><a href="#" class="nav-link">Training</a></li>
-                        <li><a href="#" class="nav-link">Quiz</a></li>
-                        <li><a href="#" class="nav-link">Contact</a></li>
-                        <li><a href="#" class="nav-link">Affiliates</a></li>
+                        <li><a href="https://powervalues.xyz/" class="nav-link nav-link-active">Home</a></li>
+                        <li><a href="https://powervalues.xyz/call" class="nav-link">Call</a></li>
+                        <li><a href="https://power-values.github.io/book/" class="nav-link">Book</a></li>
+                        <li><a href="https://power-values.github.io/training/" class="nav-link">Training</a></li>
+                        <li><a href="https://powervalues.xyz/quiz" class="nav-link">Quiz</a></li>
+                        <li><a href="https://powervalues.xyz/contact" class="nav-link">Contact</a></li>
+                        <li><a href="https://powervalues.xyz/affiliates" class="nav-link">Affiliates</a></li>
                     </ul>
                 </nav>
                 <div class="header-cta">
@@ -1404,7 +1410,7 @@
                 <p>Discover the compass that guides your choices and unlocks your fullest potential. Our training helps you move from knowing your values to living them daily.</p>
                 <div class="hero-buttons">
                     <a href="#how-it-works" class="button button-large">Start Your Journey</a>
-                    <a href="#" class="button button-secondary button-large">Take the Quiz</a>
+                    <a href="https://powervalues.xyz/quiz" class="button button-secondary button-large">Take the Quiz</a>
                 </div>
             </div>
             <div class="hero-scroll-indicator" onclick="document.getElementById('gap-problem').scrollIntoView({behavior: 'smooth'});">
@@ -1431,7 +1437,7 @@
                     </div>
                     <div class="gap-card animate-on-scroll">
                         <div class="gap-icon">🌀</div>
-                        <h3>The Clarity Crisis</div>
+                        <h3>The Clarity Crisis</h3>
                         <p>Without clear values, every decision feels heavy. You second-guess yourself, overthink options, and still wonder if you made the right choice.</p>
                     </div>
                 </div>
@@ -1495,7 +1501,7 @@
                 </div>
                 <div class="section-cta animate-on-scroll">
                     <p class="cta-subtitle">Ready to stop guessing and start knowing?</p>
-                    <a href="#" class="button button-large">Take the Free Quiz</a>
+                    <a href="https://powervalues.xyz/quiz" class="button button-large">Take the Free Quiz</a>
                 </div>
             </div>
         </section>
@@ -1565,17 +1571,15 @@
                             </div>
                         </div>
                         <div class="testimonial-slide">
-                            <div class="testimonial-card">
-                                <div class="quote-mark">"</div>
-                                <p class="testimonial-text">This isn't coaching that tells you what to do. It's a process that helps you discover what truly drives you—and then build around that. The clarity I gained has transformed how I approach every decision.</p>
-                                <div class="testimonial-footer">
-                                    <div class="testimonial-avatar">SM</div>
-                                    <div class="testimonial-info">
-                                        <div class="testimonial-author">Sarah Mitchell</div>
-                                        <div class="testimonial-role">Executive Director</div>
-                                    </div>
-                                    <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                            <div class="quote-mark">"</div>
+                            <p class="testimonial-text">This isn't coaching that tells you what to do. It's a process that helps you discover what truly drives you—and then build around that. The clarity I gained has transformed how I approach every decision.</p>
+                            <div class="testimonial-footer">
+                                <div class="testimonial-avatar">SM</div>
+                                <div class="testimonial-info">
+                                    <div class="testimonial-author">Sarah Mitchell</div>
+                                    <div class="testimonial-role">Executive Director</div>
                                 </div>
+                                <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
                             </div>
                         </div>
                         <div class="testimonial-slide">
@@ -1680,7 +1684,7 @@
                             <p>Dive deep into the methodology with our comprehensive guide. Available in multiple formats to suit your reading preference.</p>
                             <div class="resource-options">
                                 <p class="option-divider">Prefer Kindle or Paperback?</p>
-                                <a href="#" class="button button-small">Buy on Amazon</a>
+                                <a href="https://www.amazon.com/Power-Values-Design-Around-Matters-ebook/dp/B0FMSXNXZC/ref=sr_1_1?crid=2RBXLKVUD7JEA&dib=eyJ2IjoiMSJ9.wQF3solYVg4bjQgujuXVMQ.-Hex4lEN1aTx3AdDQGa1ZFJe8owGsVAH9ZpY1-Z3-VA&dib_tag=se&keywords=power+values+jonathan+Keim&qid=1756469848&sprefix=power+values+jonathan+k%2Caps%2C736&sr=8-1" class="button button-small" target="_blank">Buy on Amazon</a>
                             </div>
                         </div>
                     </div>
@@ -1693,9 +1697,9 @@
                             <h3>The Training Series</h3>
                             <p>Interactive video training that walks you through each step of discovering and implementing your Power Values.</p>
                             <div class="resource-options">
-                                <a href="#" class="button button-small">Explore The Training</a>
+                                <a href="https://power-values.github.io/training/" class="button button-small">Explore The Training</a>
                                 <p class="option-divider">Want to speak directly?</p>
-                                <a href="#" class="button-outline">Book A Call To Learn More</a>
+                                <a href="https://powervalues.xyz/call" class="button-outline">Book A Call To Learn More</a>
                             </div>
                         </div>
                     </div>
@@ -1709,8 +1713,8 @@
                     <h2>You've seen what matters most. Now, it's time to act on it.</h2>
                     <p>Whether you're navigating change, launching something new, or realigning your leadership—this is where we begin.</p>
                     <div class="cta-buttons">
-                        <a href="#" class="button button-large">Book a Discovery Call</a>
-                        <a href="#" class="button button-secondary button-large">Take the Free Quiz</a>
+                        <a href="https://powervalues.xyz/call" class="button button-large">Book a Discovery Call</a>
+                        <a href="https://powervalues.xyz/quiz" class="button button-secondary button-large">Take the Free Quiz</a>
                     </div>
                 </div>
             </div>
@@ -1721,30 +1725,33 @@
     <footer>
         <div class="container footer-container">
             <div class="footer-social">
-                <a href="#" class="social-icon-link footer-icon" aria-label="Twitter">
+                <a href="https://x.com/PowerValues?t=ikLHJs3mtw1xALktdYu3HA&s=09" class="social-icon-link footer-icon" aria-label="Twitter" target="_blank">
                     <img src="images/icons/twitter.svg" alt="Twitter">
                 </a>
-                <a href="#" class="social-icon-link footer-icon" aria-label="Facebook">
+                <a href="https://www.facebook.com/share/178ECqSno7/" class="social-icon-link footer-icon" aria-label="Facebook" target="_blank">
                     <img src="images/icons/facebook.svg" alt="Facebook">
                 </a>
-                <a href="#" class="social-icon-link footer-icon" aria-label="LinkedIn">
+                <a href="https://www.linkedin.com/company/power-values/" class="social-icon-link footer-icon" aria-label="LinkedIn" target="_blank">
                     <img src="images/icons/Linkedin.svg" alt="LinkedIn">
                 </a>
-                <a href="#" class="social-icon-link footer-icon" aria-label="Instagram">
+                <a href="https://www.instagram.com/mypowervalues?igsh=MWMwdDduc3dodzk2ag==" class="social-icon-link footer-icon" aria-label="Instagram" target="_blank">
                     <img src="images/icons/instagram.svg" alt="Instagram">
                 </a>
-                <a href="#" class="social-icon-link footer-icon" aria-label="TikTok">
+                <a href="https://www.tiktok.com/@powervalues?is_from_webapp=1&sender_device=pc" class="social-icon-link footer-icon" aria-label="TikTok" target="_blank">
                     <img src="images/icons/tiktok.svg" alt="TikTok">
                 </a>
-                <a href="#" class="social-icon-link footer-icon" aria-label="YouTube">
+                <a href="https://youtube.com/@powervalues?si=s-5eb5iBcrIX8KSV" class="social-icon-link footer-icon" aria-label="YouTube" target="_blank">
                     <img src="images/icons/youtube.svg" alt="YouTube">
+                </a>
+                <a href="https://www.pinterest.com/PowerValues/" class="social-icon-link footer-icon" aria-label="Pinterest" target="_blank">
+                    <img src="images/icons/pinterest.svg" alt="Pinterest">
                 </a>
             </div>
             <p class="footer-copy">&copy; 2025 Power Values. All Rights Reserved.</p>
             <div class="footer-legal">
-                <a href="#">Terms & Conditions</a>
+                <a href="https://powervalues.xyz/terms-of-use">Terms & Conditions</a>
                 <span>|</span>
-                <a href="#">Privacy Policy</a>
+                <a href="https://powervalues.xyz/privacy-policy">Privacy Policy</a>
             </div>
         </div>
     </footer>
