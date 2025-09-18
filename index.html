@@ -590,12 +590,14 @@
         }
         .timeline-line {
             position: absolute;
-            left: 2rem; /* Aligned with the start of the content */
+            left: 50%; /* Center the line */
+            transform: translateX(-50%); /* Pull it back by half its width for perfect centering */
             top: 0;
             bottom: 0;
             width: 2px;
             background: linear-gradient(180deg, var(--accent-color), var(--secondary-accent));
             opacity: 0.3;
+            z-index: 1; /* Place the line behind the circles */
         }
         .journey-step {
             position: relative;
@@ -603,8 +605,8 @@
         }
         .step-number {
             position: absolute;
-            left: 2rem; /* Aligned with the timeline line */
-            transform: translateX(-50%);
+            left: 50%; /* Center the number container */
+            transform: translateX(-50%); /* Pull it back by half its width for perfect centering */
             width: 50px;
             height: 50px;
             background: linear-gradient(135deg, var(--accent-color), #ffe14d);
@@ -617,7 +619,7 @@
             font-size: 1.2rem;
             color: var(--primary-color);
             box-shadow: 0 8px 20px rgba(249, 226, 102, 0.4);
-            z-index: 2;
+            z-index: 2; /* Place the circles in front of the line */
         }
         .step-content {
             display: grid;
@@ -1021,6 +1023,12 @@
             height: auto;
             filter: drop-shadow(0 20px 40px rgba(0,0,0,0.3));
             transition: transform 0.3s ease;
+            
+            /* --- BEGIN FIX FOR IMAGE SIZE --- */
+            width: 100%;
+            height: 250px;
+            object-fit: contain;
+            /* --- END FIX FOR IMAGE SIZE --- */
         }
         .resource-card:hover .resource-image img {
             transform: scale(1.05) rotate(-2deg);
@@ -1268,8 +1276,7 @@
                 margin: 2rem auto;
             }
             .timeline-line {
-                left: 50%;
-                transform: translateX(-50%);
+                display: none;
             }
             .step-number {
                 position: relative; /* Changed from absolute to relative */
@@ -1283,50 +1290,6 @@
             }
             .step-icon {
                 margin: 0 auto;
-            }
-            .about-content {
-                grid-template-columns: 1fr;
-            }
-            .testimonial-stats {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-            .resources-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-        }
-        @media (max-width: 768px) {
-            .header-cta { display: none; }
-            .hero-home { padding: 3rem 0; margin-top: 60px; min-height: 70vh; }
-            .container { width: 95%; }
-            .gap-card {
-                padding: 1.5rem;
-            }
-            .problem-solution {
-                padding: 1.5rem;
-                border-radius: 15px;
-            }
-            .solution-content h3 {
-                font-size: 1.4rem;
-            }
-            .solution-content p {
-                font-size: 1rem;
-            }
-            .journey-timeline {
-                padding-left: 0;
-            }
-            .timeline-line {
-                display: none; /* Hide the timeline line on very small screens */
-            }
-            .step-number {
-                left: auto;
-                width: 40px;
-                height: 40px;
-                font-size: 1rem;
-            }
-            .step-content {
-                padding: 0;
             }
             .step-icon img {
                 width: 60px;
@@ -1418,10 +1381,11 @@
                         <li><a href="#" class="nav-link">Training</a></li>
                         <li><a href="#" class="nav-link">Quiz</a></li>
                         <li><a href="#" class="nav-link">Contact</a></li>
+                        <li><a href="#" class="nav-link">Affiliates</a></li>
                     </ul>
                 </nav>
                 <div class="header-cta">
-                    <a href="#cta" class="button button-small">Get Started</a>
+                    <!-- The user wants to remove this button from the header -->
                 </div>
             </div>
         </div>
@@ -1467,7 +1431,7 @@
                     </div>
                     <div class="gap-card animate-on-scroll">
                         <div class="gap-icon">🌀</div>
-                        <h3>The Clarity Crisis</h3>
+                        <h3>The Clarity Crisis</div>
                         <p>Without clear values, every decision feels heavy. You second-guess yourself, overthink options, and still wonder if you made the right choice.</p>
                     </div>
                 </div>
@@ -1709,7 +1673,7 @@
                     <div class="resource-card animate-on-scroll">
                         <div class="resource-image">
                             <img src="images/book-cover.png" alt="Power Values Book">
-                            <div class="resource-badge">Bestseller</div>
+                            
                         </div>
                         <div class="resource-content">
                             <h3>The Power Values Book</h3>
@@ -1723,7 +1687,7 @@
                     <div class="resource-card animate-on-scroll">
                         <div class="resource-image">
                             <img src="images/ThePowerValuesTrainingSeries_dark.png" alt="Power Values Training Series">
-                            <div class="resource-badge">Most Popular</div>
+                            
                         </div>
                         <div class="resource-content">
                             <h3>The Training Series</h3>
